@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="httsp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentForm</title>
+</head>
+<body>
+    <form action="#" th:action="@{/confirmation}" th:object="${student}" method="post">
+        <div>Name: <input type="text" th:field="*{name}"/> <br/></div>
+        <div>
+            Gender:
+            <input type="radio" id="male" th:field="*{gender}" th:value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" th:field="*{gender}" th:value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        <div>
+            Grade:
+            <input type="radio" id="gradeA" th:field="*{grade}" th:value="A">
+            <label for="gradeA">A</label>
+            <input type="radio" id="gradeB" th:field="*{grade}" th:value="B">
+            <label for="gradeB">B</label>
+            <input type="radio" id="gradeC" th:field="*{grade}" th:value="C">
+            <label for="gradeC">C</label>
+            <input type="radio" id="gradeD" th:field="*{grade}" th:value="D">
+            <label for="gradeD">D</label>
+            <input type="radio" id="other" th:field="*{grade}" th:value="Other">
+            <label for="other">Other</label>
+        </div>
+
+        <div>
+            Final Exam(%):<input type="text" th:field="*{score}"/> <br/>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

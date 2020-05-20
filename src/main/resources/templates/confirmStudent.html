@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="httsp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentForm</title>
+</head>
+<body>
+<p>Name: [[${student.name}]]</p>
+<p>Gender:
+    <span th:if="${student.gender} == 'FEMALE'">Female</span>
+    <span th:unless="${student.gender} == 'FEMALE'">Male</span>
+</p>
+
+
+<p th:switch="${student.grade}"> Grade: [[${student.grade}]]
+        <span th:case="'A'">Excellent</span>
+        <span th:case="'B'">Good</span>
+        <span th:case="'C'">Average</span>
+        <span th:case="'*'">Need Work</span>
+</p>
+
+<p>
+    Final Exam:
+    <span th:text="${student.score} >= 60 ? 'PASSED' : 'FAILED'"></span>
+</p>
+
+<p>
+    Final Grade:
+    <span th:text="${student.hasPassed} ? 'PASSED' : 'FAILED'"></span>
+</p>
+
+<!--<form action="#" th:action="@{/again}" method="post">-->
+
+<!--    <div>Would you like to enter again?-->
+<!--    <input type="radio" id="yes" name="answer" value=true>-->
+<!--    <label for="yes">Yes</label>-->
+<!--    <input type="radio" id="no" name="answer" value=false>-->
+<!--    <label for="no">No</label>-->
+<!--    </div>-->
+<!--    <input type="submit" value="Submit">-->
+<!--</form>-->
+</body>
+</html>
